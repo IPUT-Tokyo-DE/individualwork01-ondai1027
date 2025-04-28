@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,7 +21,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "goal")
+        {
+            SceneManager.LoadScene("omedetou");
+        }
+    }
 
 
 }
